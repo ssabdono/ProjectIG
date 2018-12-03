@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="PolicyPeriod" alias="PolicyPeriod" created="2018-12-03T15:46:57" modified="2018-12-03T15:47:08" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="LossPayee" parentTableSchema="dbo" parentTableName="Insured" x="328" y="20">
+      <foreignKeyColumn columnName="LossPayee" parentColumnName="Id" />
+    </foreignKey>
+    <foreignKey id="Branch" parentTableSchema="dbo" parentTableName="Branch" x="328" y="204">
+      <foreignKeyColumn columnName="Branch" parentColumnName="Id" />
+    </foreignKey>
+    <foreignKey id="Party" parentTableSchema="dbo" parentTableName="Party" x="328" y="365">
+      <foreignKeyColumn columnName="Party" parentColumnName="Id" />
+    </foreignKey>
+    <foreignKey id="Currency" parentTableSchema="dbo" parentTableName="Currency" x="328" y="549">
+      <foreignKeyColumn columnName="Currency" parentColumnName="Id" />
+    </foreignKey>
+    <foreignKey id="CoverType" parentTableSchema="dbo" parentTableName="CoverType" x="328" y="710">
+      <foreignKeyColumn columnName="CoverType" parentColumnName="Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Id" fieldName="ID" label="Id" />
+    <column name="Name" fieldName="Name" label="Name" />
+    <column name="Policy" fieldName="Policy" label="Policy" />
+    <column name="LossPayee" fieldName="LossPayee" label="Loss Payee" aliasColumnName="Name" aliasForeignKey="LossPayee" />
+    <column name="Name" fieldName="LossPayeeName" label="Loss Payee Name" foreignKey="LossPayee" />
+    <column name="Branch" fieldName="Branch" label="Branch" aliasColumnName="Code" aliasForeignKey="Branch" />
+    <column name="Code" fieldName="BranchCode" label="Branch Code" foreignKey="Branch" />
+    <column name="Party" fieldName="Party" label="Party" aliasColumnName="Type" aliasForeignKey="Party" />
+    <column name="Type" fieldName="PartyType" label="Party Type" foreignKey="Party" />
+    <column name="Premium" fieldName="Premium" label="Premium" />
+    <column name="Currency" fieldName="Currency" label="Currency" aliasColumnName="Code" aliasForeignKey="Currency" />
+    <column name="Code" fieldName="CurrencyCode" label="Currency Code" foreignKey="Currency" />
+    <column name="ExchangeRate" fieldName="ExchangeRate" label="Exchange Rate" />
+    <column name="StartDate" fieldName="StartDate" label="Start Date" />
+    <column name="EndDate" fieldName="EndDate" label="End Date" />
+    <column name="CoverType" fieldName="CoverType" label="Cover Type" aliasColumnName="Name" aliasForeignKey="CoverType" />
+    <column name="Name" fieldName="CoverTypeName" label="Cover Type Name" foreignKey="CoverType" />
+    <column name="Deleted" fieldName="Deleted" label="Deleted" />
+    <column name="CreatedBy" fieldName="CreatedBy" label="Created By" />
+    <column name="CreatedOn" fieldName="CreatedOn" label="Created On" />
+    <column name="UpdatedBy" fieldName="UpdatedBy" label="Updated By" />
+    <column name="UpdatedOn" fieldName="UpdatedOn" label="Updated On" />
+  </columns>
+</dataModel>

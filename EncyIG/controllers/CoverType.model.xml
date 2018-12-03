@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="CoverType" alias="CoverType" created="2018-12-03T15:46:05" modified="2018-12-03T15:46:06" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Id" fieldName="ID" label="Id" />
+    <column name="Name" fieldName="Name" label="Name" />
+    <column name="Deleted" fieldName="Deleted" label="Deleted" />
+    <column name="CreatedBy" fieldName="CreatedBy" label="Created By" />
+    <column name="CreatedOn" fieldName="CreatedOn" label="Created On" />
+    <column name="UpdatedBy" fieldName="UpdatedBy" label="Updated By" />
+    <column name="UpdatedOn" fieldName="UpdatedOn" label="Updated On" />
+  </columns>
+</dataModel>

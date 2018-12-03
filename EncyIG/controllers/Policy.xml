@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Policy" conflictDetection="overwriteChanges" label="Policy" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Policy"."Id" "ID"
+	,"Policy"."Risk" "Risk"
+	,"Risk"."Code" "RiskCode"
+	,"Policy"."Unit" "Unit"
+	,"Unit"."Name" "UnitName"
+	,"Policy"."Insured" "Insured"
+	,"Insured"."Name" "InsuredName"
+	,"Policy"."SumInsured" "SumInsured"
+	,"Policy"."Currency" "Currency"
+	,"Currency"."Code" "CurrencyCode"
+	,"Policy"."Deleted" "Deleted"
+	,"Policy"."CreatedBy" "CreatedBy"
+	,"Policy"."CreatedOn" "CreatedOn"
+	,"Policy"."UpdatedBy" "UpdatedBy"
+	,"Policy"."UpdatedOn" "UpdatedOn"
+from "dbo"."Policy" "Policy"
+	left join "dbo"."Risk" "Risk" on "Policy"."Risk" = "Risk"."Id"
+	left join "dbo"."Unit" "Unit" on "Policy"."Unit" = "Unit"."Id"
+	left join "dbo"."Insured" "Insured" on "Policy"."Insured" = "Insured"."Id"
+	left join "dbo"."Currency" "Currency" on "Policy"."Currency" = "Currency"."Id"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="ID" type="String" allowNulls="false" isPrimaryKey="true" label="Id" length="50" showInSummary="true" />
+    <field name="Risk" type="Guid" allowNulls="false" label="Risk" showInSummary="true">
+      <items style="Lookup" dataController="Risk" newDataView="createForm1" dataValueField="ID" dataTextField="Code" />
+    </field>
+    <field name="RiskCode" type="String" readOnly="true" label="Risk Code" length="10" />
+    <field name="Unit" type="Guid" allowNulls="false" label="Unit" showInSummary="true">
+      <items style="Lookup" dataController="Unit" newDataView="createForm1" dataValueField="ID" dataTextField="Name" />
+    </field>
+    <field name="UnitName" type="String" readOnly="true" label="Unit Name" length="50" />
+    <field name="Insured" type="Guid" allowNulls="false" label="Insured" showInSummary="true">
+      <items style="Lookup" dataController="Insured" newDataView="createForm1" dataValueField="ID" dataTextField="Name" />
+    </field>
+    <field name="InsuredName" type="String" readOnly="true" label="Insured Name" length="150" />
+    <field name="SumInsured" type="Decimal" allowNulls="false" label="Sum Insured" showInSummary="true" />
+    <field name="Currency" type="Guid" allowNulls="false" label="Currency">
+      <items style="Lookup" dataController="Currency" newDataView="createForm1" dataValueField="ID" dataTextField="Code" />
+    </field>
+    <field name="CurrencyCode" type="String" readOnly="true" label="Currency Code" length="10" />
+    <field name="Deleted" type="Boolean" allowNulls="false" label="Deleted" />
+    <field name="CreatedBy" type="Guid" allowNulls="false" label="Created By" />
+    <field name="CreatedOn" type="DateTime" allowNulls="false" label="Created On" />
+    <field name="UpdatedBy" type="Guid" allowNulls="false" label="Updated By" />
+    <field name="UpdatedOn" type="DateTime" allowNulls="false" label="Updated On" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Policy">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="ID" columns="50" />
+        <dataField fieldName="Risk" aliasFieldName="RiskCode" hyperlinkFormatString="~/pages/Risk?ID={Risk}&amp;_controller=Risk&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Unit" aliasFieldName="UnitName" hyperlinkFormatString="~/pages/Unit?ID={Unit}&amp;_controller=Unit&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Insured" aliasFieldName="InsuredName" hyperlinkFormatString="~/pages/Insured?ID={Insured}&amp;_controller=Insured&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="SumInsured" columns="15" />
+        <dataField fieldName="Currency" aliasFieldName="CurrencyCode" hyperlinkFormatString="~/pages/Currency?ID={Currency}&amp;_controller=Currency&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Deleted" hidden="true" />
+        <dataField fieldName="CreatedBy" columns="15" />
+        <dataField fieldName="CreatedOn" columns="10" />
+        <dataField fieldName="UpdatedBy" columns="15" />
+        <dataField fieldName="UpdatedOn" columns="10" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Policy">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Policy" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="ID" columns="50" />
+            <dataField fieldName="Risk" aliasFieldName="RiskCode" hyperlinkFormatString="~/pages/Risk?ID={Risk}&amp;_controller=Risk&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Unit" aliasFieldName="UnitName" hyperlinkFormatString="~/pages/Unit?ID={Unit}&amp;_controller=Unit&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Insured" aliasFieldName="InsuredName" hyperlinkFormatString="~/pages/Insured?ID={Insured}&amp;_controller=Insured&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="SumInsured" columns="15" />
+            <dataField fieldName="Currency" aliasFieldName="CurrencyCode" hyperlinkFormatString="~/pages/Currency?ID={Currency}&amp;_controller=Currency&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Deleted" hidden="true" />
+            <dataField fieldName="CreatedBy" columns="15" />
+            <dataField fieldName="CreatedOn" columns="10" />
+            <dataField fieldName="UpdatedBy" columns="15" />
+            <dataField fieldName="UpdatedOn" columns="10" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Policy">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="ID" columns="50" />
+            <dataField fieldName="Risk" aliasFieldName="RiskCode" />
+            <dataField fieldName="Unit" aliasFieldName="UnitName" />
+            <dataField fieldName="Insured" aliasFieldName="InsuredName" />
+            <dataField fieldName="SumInsured" columns="15" />
+            <dataField fieldName="Currency" aliasFieldName="CurrencyCode" />
+            <dataField fieldName="Deleted" hidden="true" />
+            <dataField fieldName="CreatedBy" columns="15" />
+            <dataField fieldName="CreatedOn" columns="10" />
+            <dataField fieldName="UpdatedBy" columns="15" />
+            <dataField fieldName="UpdatedOn" columns="10" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+  </actions>
+</dataController>

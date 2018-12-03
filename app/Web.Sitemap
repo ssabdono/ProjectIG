@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode title="^SiteHome^Home^SiteHome^" description="" url="~/index.html">
+    <siteMapNode title="^HomePath^Home^HomePath^" description="^HomeDesc^Application home page^HomeDesc^" url="~/pages/home" cssClass="Wide" />
+    <siteMapNode title="Branch" description="View Branch" url="~/pages/branch" />
+    <siteMapNode title="Cover Type" description="View Cover Type" url="~/pages/cover-type" />
+    <siteMapNode title="Currency" description="View Currency" url="~/pages/currency" />
+    <siteMapNode title="Industry" description="View Industry" url="~/pages/industry" />
+    <siteMapNode title="Unit" description="View Unit" url="~/pages/unit" />
+    <siteMapNode title="Risk" description="View Risk" url="~/pages/risk" />
+    <siteMapNode title="Party" description="View Party" url="~/pages/party" />
+    <siteMapNode title="Insured" description="View Insured" url="~/pages/insured" />
+    <siteMapNode title="Policy" description="View Policy" url="~/pages/policy" />
+    <siteMapNode title="Policy Period" description="View Policy Period" url="~/pages/policy-period" />
+    <siteMapNode title="^MembershipPath^Membership^MembershipPath^" description="^MembershipDesc^User and role manager^MembershipDesc^" url="~/pages/membership" roles="Administrators" />
+    <siteMapNode title="Site Content" description="View Site Content" url="~/pages/site-content" roles="Administrators, Content Editors, Developers" />
+  </siteMapNode>
+</siteMap>

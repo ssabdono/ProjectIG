@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Policy" alias="Policy" created="2018-12-03T15:46:44" modified="2018-12-03T15:46:55" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Risk" parentTableSchema="dbo" parentTableName="Risk" x="317" y="20">
+      <foreignKeyColumn columnName="Risk" parentColumnName="Id" />
+    </foreignKey>
+    <foreignKey id="Unit" parentTableSchema="dbo" parentTableName="Unit" x="317" y="181">
+      <foreignKeyColumn columnName="Unit" parentColumnName="Id" />
+    </foreignKey>
+    <foreignKey id="Insured" parentTableSchema="dbo" parentTableName="Insured" x="317" y="342">
+      <foreignKeyColumn columnName="Insured" parentColumnName="Id" />
+    </foreignKey>
+    <foreignKey id="Currency" parentTableSchema="dbo" parentTableName="Currency" x="317" y="526">
+      <foreignKeyColumn columnName="Currency" parentColumnName="Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Id" fieldName="ID" label="Id" />
+    <column name="Risk" fieldName="Risk" label="Risk" aliasColumnName="Code" aliasForeignKey="Risk" />
+    <column name="Code" fieldName="RiskCode" label="Risk Code" foreignKey="Risk" />
+    <column name="Unit" fieldName="Unit" label="Unit" aliasColumnName="Name" aliasForeignKey="Unit" />
+    <column name="Name" fieldName="UnitName" label="Unit Name" foreignKey="Unit" />
+    <column name="Insured" fieldName="Insured" label="Insured" aliasColumnName="Name" aliasForeignKey="Insured" />
+    <column name="Name" fieldName="InsuredName" label="Insured Name" foreignKey="Insured" />
+    <column name="SumInsured" fieldName="SumInsured" label="Sum Insured" />
+    <column name="Currency" fieldName="Currency" label="Currency" aliasColumnName="Code" aliasForeignKey="Currency" />
+    <column name="Code" fieldName="CurrencyCode" label="Currency Code" foreignKey="Currency" />
+    <column name="Deleted" fieldName="Deleted" label="Deleted" />
+    <column name="CreatedBy" fieldName="CreatedBy" label="Created By" />
+    <column name="CreatedOn" fieldName="CreatedOn" label="Created On" />
+    <column name="UpdatedBy" fieldName="UpdatedBy" label="Updated By" />
+    <column name="UpdatedOn" fieldName="UpdatedOn" label="Updated On" />
+  </columns>
+</dataModel>

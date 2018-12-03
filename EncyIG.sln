@@ -1,0 +1,36 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app", "app\app.csproj", "{DFFCDCE7-8D35-42FB-A348-5639CC8EB0A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncyIG", "EncyIG\EncyIG.csproj", "{467D1E1D-64AB-423F-976A-B095755DBF9C}"
+EndProject
+
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code On Time Items", "Code On Time Items", "{6FAB49B5-65CB-4907-B4F5-B89E4FA3FFEE}"
+	ProjectSection(SolutionItems) = preProject
+		ClientLibrary.en-US.txt = ClientLibrary.en-US.txt
+		DataAquarium.Project.xml = DataAquarium.Project.xml
+		DataAquarium.Version.xml = DataAquarium.Version.xml
+		Sync.DESKTOP-5DBJI7M-dotfe.xml = Sync.DESKTOP-5DBJI7M-dotfe.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{467D1E1D-64AB-423F-976A-B095755DBF9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{467D1E1D-64AB-423F-976A-B095755DBF9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{467D1E1D-64AB-423F-976A-B095755DBF9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{467D1E1D-64AB-423F-976A-B095755DBF9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFFCDCE7-8D35-42FB-A348-5639CC8EB0A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFFCDCE7-8D35-42FB-A348-5639CC8EB0A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFFCDCE7-8D35-42FB-A348-5639CC8EB0A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFFCDCE7-8D35-42FB-A348-5639CC8EB0A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
